@@ -39,4 +39,19 @@ public class TennisGameTest {
 		playerTwo.setScore(0);
 		assertEquals("FIFTEEN,LOVE", tennisGame.getScore(playerOne, playerTwo));
 	}
+
+	@Test
+	public void testPlayerOneWinsFirstTwoBalls() {
+		playerOne.setScore(2);
+		playerTwo.setScore(0);
+		assertEquals("THIRTY,LOVE", tennisGame.getScore(playerOne, playerTwo));
+	}
+
+	@Test
+	public void testPlayerOneWinsFirstThreeBalls() {
+		playerOne.setScore(3);
+		playerTwo.setScore(0);
+		assertEquals("FORTY,LOVE", tennisGame.getScore(playerOne, playerTwo));
+	}
+
 }
