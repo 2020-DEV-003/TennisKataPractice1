@@ -13,6 +13,14 @@ public class TennisGame {
 	public String getScore(Player playerOne, Player playerTwo) {
 		int playerOneScore = playerOne.getScore();
 		int playerTwoScore = playerTwo.getScore();
+
+		if (playerOneScore >= 4 && playerTwoScore == playerOneScore - 2) {
+			return playerOne.getName() + Score.WINS.value;
+		}
+		if (playerTwoScore >= 4 && playerOneScore == playerTwoScore - 2) {
+			return playerTwo.getName() + Score.WINS.value;
+		}
+
 		if (isAll(playerOneScore, playerTwoScore)) {
 			return Points.get(playerOne.getScore()) + Score.ALL.value;
 		}
@@ -26,4 +34,5 @@ public class TennisGame {
 
 		return false;
 	}
+
 }
