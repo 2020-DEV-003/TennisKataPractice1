@@ -22,6 +22,10 @@ public class TennisGame {
 			}
 		}
 
+		if (playerOneScore == playerTwoScore && playerOneScore >= 3) {
+			return Score.DEUCE.value;
+		}
+		
 		if (isAll(playerOneScore, playerTwoScore)) {
 			return Points.get(playerOne.getScore()) + Score.ALL.value;
 		}
