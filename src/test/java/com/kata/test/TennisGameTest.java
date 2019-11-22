@@ -88,5 +88,19 @@ public class TennisGameTest {
 		playerTwo.setScore(4);
 		assertEquals("Suresh Wins", tennisGame.getScore(playerOne, playerTwo));
 	}
+	
+	@Test
+	public void testFifteenAll() {
+		playerOne.setScore(1);
+		playerTwo.setScore(1);
+		assertEquals("FIFTEEN All", tennisGame.getScore(playerOne, playerTwo));
+	}
+
+	@Test
+	public void testThirtyAll() {
+		playerOne.setScore(2);
+		playerTwo.setScore(2);
+		assertEquals("THIRTY All", tennisGame.getScore(playerOne, playerTwo));
+	}
 
 }
