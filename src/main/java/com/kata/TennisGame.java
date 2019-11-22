@@ -22,11 +22,12 @@ public class TennisGame {
 			}
 		}
 
-		if (playerOneScore > playerTwoScore && playerTwoScore >= 3) {
-			return playerOne.getName() + Score.ADVANTAGE.value;
-		}
-		if (playerOneScore < playerTwoScore && playerOneScore >= 3) {
-			return playerTwo.getName() + Score.ADVANTAGE.value;
+		if (isAdvantage(playerOneScore, playerTwoScore)) {
+			if (playerOneScore > playerTwoScore) {
+				return playerOne.getName() + Score.ADVANTAGE.value;
+			} else {
+				return playerTwo.getName() + Score.ADVANTAGE.value;
+			}
 		}
 
 		if (isDeuce(playerOneScore, playerTwoScore)) {
@@ -44,6 +45,16 @@ public class TennisGame {
 			return true;
 		}
 		if (playerTwoScore >= 4 && playerOneScore == playerTwoScore - 2) {
+			return true;
+		}
+		return false;
+	}
+
+	private boolean isAdvantage(int playerOneScore, int playerTwoScore) {
+		if (playerOneScore > playerTwoScore && playerTwoScore >= 3) {
+			return true;
+		}
+		if (playerOneScore < playerTwoScore && playerOneScore >= 3) {
 			return true;
 		}
 		return false;
