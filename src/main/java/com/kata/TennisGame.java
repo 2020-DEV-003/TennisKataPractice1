@@ -22,6 +22,13 @@ public class TennisGame {
 			}
 		}
 
+		if (playerOneScore > playerTwoScore && playerTwoScore >= 3) {
+			return playerOne.getName() + Score.ADVANTAGE.value;
+		}
+		if (playerOneScore < playerTwoScore && playerOneScore >= 3) {
+			return playerTwo.getName() + Score.ADVANTAGE.value;
+		}
+
 		if (isDeuce(playerOneScore, playerTwoScore)) {
 			return Score.DEUCE.value;
 		}
