@@ -32,4 +32,11 @@ public class TennisGameTest {
 		playerTwo.setScore(0);
 		assertEquals("LOVE All", tennisGame.getScore(playerOne, playerTwo));
 	}
+
+	@Test
+	public void testPlayerOneWinsFirstBall() {
+		playerOne.setScore(1);
+		playerTwo.setScore(0);
+		assertEquals("FIFTEEN,LOVE", tennisGame.getScore(playerOne, playerTwo));
+	}
 }
