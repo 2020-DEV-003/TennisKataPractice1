@@ -54,4 +54,25 @@ public class TennisGameTest {
 		assertEquals("FORTY,LOVE", tennisGame.getScore(playerOne, playerTwo));
 	}
 
+	@Test
+	public void testPlayerTwoWinsFirstBall() {
+		playerOne.setScore(0);
+		playerTwo.setScore(1);
+		assertEquals("LOVE,FIFTEEN", tennisGame.getScore(playerOne, playerTwo));
+	}
+
+	@Test
+	public void testPlayerTwoWinsFirstTwoBalls() {
+		playerOne.setScore(0);
+		playerTwo.setScore(2);
+		assertEquals("LOVE,THIRTY", tennisGame.getScore(playerOne, playerTwo));
+	}
+
+	@Test
+	public void testPlayerTwoWinsFirstThreeBalls() {
+		playerOne.setScore(0);
+		playerTwo.setScore(3);
+		assertEquals("LOVE,FORTY", tennisGame.getScore(playerOne, playerTwo));
+	}
+
 }
