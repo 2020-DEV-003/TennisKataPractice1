@@ -22,10 +22,10 @@ public class TennisGame {
 			}
 		}
 
-		if (playerOneScore == playerTwoScore && playerOneScore >= 3) {
+		if (isDeuce(playerOneScore, playerTwoScore)) {
 			return Score.DEUCE.value;
 		}
-		
+
 		if (isAll(playerOneScore, playerTwoScore)) {
 			return Points.get(playerOne.getScore()) + Score.ALL.value;
 		}
@@ -37,6 +37,13 @@ public class TennisGame {
 			return true;
 		}
 		if (playerTwoScore >= 4 && playerOneScore == playerTwoScore - 2) {
+			return true;
+		}
+		return false;
+	}
+
+	private boolean isDeuce(int playerOneScore, int playerTwoScore) {
+		if (playerOneScore == playerTwoScore && playerOneScore >= 3) {
 			return true;
 		}
 		return false;
