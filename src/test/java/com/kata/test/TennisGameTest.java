@@ -102,5 +102,12 @@ public class TennisGameTest {
 		playerTwo.setScore(2);
 		assertEquals("THIRTY All", tennisGame.getScore(playerOne, playerTwo));
 	}
+	
+	@Test
+	public void testPlayersAreDeuce() {
+		playerOne.setScore(3);
+		playerTwo.setScore(3);
+		assertEquals("Deuce", tennisGame.getScore(playerOne, playerTwo));
+	}
 
 }
